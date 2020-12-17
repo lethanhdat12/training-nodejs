@@ -1,0 +1,44 @@
+<%- include('./partials/header.ejs') %>
+
+<% if(user){ %>
+    <div class="formBox w-50 m-auto">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title text-center">
+                    Chỉnh sửa thành viên
+                </div>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data"> 
+                    <div class="form-group">
+                        <label for="name">Tên thành viên</label>
+                        <input type="text" class="form-control" id="name" placeholder="Tên thành viên" name="name" value="<%= user['name'] %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="old">Tuổi</label>
+                        <input type="number" class="form-control" id="old" placeholder="Tuổi thành viên" name="old" value="<%= user['old'] %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="vitri">Vị trí thi đấu</label>
+                        <select class="form-control" id="vitri" name="vitri" value="<%= user['vitri'] %>">
+                            <option value="Tiền đạo">Tiền đạo</option>
+                            <option value="Tiền vệ">Tiền vệ</option>
+                            <option value="Hậu vệ">Hậu vệ</option>
+                            <option value="Thủ môn">Thủ môn</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Chọn ảnh</label>
+                        <input type="file" class="form-control" id="img" rows="3" name="img" value="<%= user['img'] %>"></input>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-primary">Chỉnh sửa</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<% }else{ %>
+    <h1>Không có gì để Edit cả</h1>
+<% } %>
+

@@ -1,0 +1,39 @@
+<%- include('./partials/header.ejs') %>
+
+    <div class="formBox w-50 m-auto">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title text-center">
+                    Thêm thành viên
+                </div>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data" action="/add">
+                    <div class="form-group">
+                        <label for="name">Tên thành viên</label>
+                        <input type="text" class="form-control" id="name" placeholder="Tên thành viên" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="old">Tuổi</label>
+                        <input type="number" class="form-control" id="old" placeholder="Tuổi thành viên" name="old">
+                    </div>
+                    <div class="form-group">
+                        <label for="vitri">Vị trí thi đấu</label>
+                        <select class="form-control" id="vitri" name="vitri">
+                            <option>Tiền đạo</option>
+                            <option>Tiền vệ</option>
+                            <option>Hậu vệ</option>
+                            <option>Thủ môn</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Chọn ảnh</label>
+                        <input type="file" class="form-control" id="img" rows="3" name="img"></input>
+                    </div>
+                    <div class="form-group text-center">
+                        <button class="btn btn-primary">Thêm thành viên</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
